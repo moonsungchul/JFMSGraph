@@ -28,11 +28,11 @@ public class BioGridLoader {
 	}
 	
 	public int createTable() {
-		//String sql = "create class BioGridV extends V";
-		//store.execute(dbname, sql );
-		//sql = "create class BioGridE extends E"; 
-		//store.execute(dbname,  sql);
-		String sql = "delete Vertex BioGridV";
+		String sql = "create class BioGridV extends V";
+		store.execute(dbname, sql );
+		sql = "create class BioGridE extends E"; 
+		store.execute(dbname,  sql);
+		sql = "delete Vertex BioGridV";
 		store.execute(dbname , sql);
 		sql = "delete Edge BioGridE";
 		store.execute(dbname , sql);

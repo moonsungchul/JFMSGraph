@@ -62,8 +62,8 @@ public class TestOrientDB {
 	public void testBioGridLoader() {
 		logger.info("Test BioGrid Data");
 		String url = "remote:localhost";
-		String user = "moonstar";
-		String passwd = "wooag01";
+		String user = "admin";
+		String passwd = "admin";
 		OrientDBStore store = new OrientDBStore(url, user, passwd);
 		String infile = "/home/moonstar/work2/kisti_work/dementia_network/storage_resource/BIOGRID/2016_08_09/master_BIOGRID-ALL-3.4.136.mitab.txt";
 		BioGridLoader ko = new BioGridLoader(infile, "FmsGraph", store);
