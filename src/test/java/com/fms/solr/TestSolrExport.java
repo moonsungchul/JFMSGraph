@@ -2,6 +2,7 @@ package com.fms.solr;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.solr.client.solrj.SolrQuery;
@@ -36,6 +37,23 @@ public class TestSolrExport {
 	public void tearDown() throws Exception {
 	}
 
+	@Test
+	public void testSolrDownloader() {
+		logger.info(">>>>>> test solr downloader ");
+		String[] args = new String[3];
+		args[0] = "http://localhost:32768/solr/FmsGraph";
+		args[1] = "*:*";
+		args[2] = "./out/kegg_result.out";
+		SolrDownloader dn = new SolrDownloader(args[0], args[1], args[2]);
+		try {
+			dn.download();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 	//@Test
 	public void testKeggExport() {
 		logger.info(">>>>> test kegg solr export");
@@ -44,7 +62,7 @@ public class TestSolrExport {
 		ep.export(infile);
 	}
 	
-	@Test
+	//@Test
 	public void testKeggSearch() {
 		String url = "http://localhost:32768/solr/FmsGraph";
 		SolrStore solr = new SolrStore(url);

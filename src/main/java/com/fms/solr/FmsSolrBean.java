@@ -60,6 +60,15 @@ public class FmsSolrBean {
 		return "FmsSolrBean [id=" + id + ", node1=" + node1 + ", node2=" + node2 + ", property=" + property + "]";
 	}
 	
+	public String toFileString() {
+		StringBuilder buf = new StringBuilder();
+		buf.append(this.id).append("\t");
+		buf.append(this.node1).append("\t");
+		buf.append(this.node2).append("\t");
+		buf.append(this.property).append("\n");
+		return buf.toString();
+	}
+	
 	
 	
 
